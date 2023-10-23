@@ -1,0 +1,2 @@
+# SzoftvTerv
+ Tűzoltós alkalmazás létrehozása
