@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <solid android:color="@color/white" /> <!-- Háttérszín (vörös példa) -->
+            <corners android:radius="16dp" /> <!-- Kerekítés mértéke (16dp példa) -->
+        </shape>
+    </item>
+</selector>
