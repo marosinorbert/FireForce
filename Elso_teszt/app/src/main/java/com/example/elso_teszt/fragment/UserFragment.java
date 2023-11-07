@@ -1,4 +1,4 @@
-package com.example.elso_teszt;
+package com.example.elso_teszt.fragment;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.elso_teszt.R;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,7 +60,7 @@ public class UserFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        // Inflate the layout for this
         return inflater.inflate(R.layout.fragment_user, container, false);
     }
 }
