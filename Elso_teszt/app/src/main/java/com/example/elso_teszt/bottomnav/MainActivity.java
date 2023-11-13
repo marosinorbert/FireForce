@@ -14,12 +14,19 @@ import com.example.elso_teszt.adapter.AdapterViewPager;
 import com.example.elso_teszt.fragment.MapFragment;
 import com.example.elso_teszt.fragment.MenuFragment;
 import com.example.elso_teszt.fragment.UserFragment;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnMapReadyCallback{
+    private GoogleMap myMap;
     ViewPager2 pagerMain;
     ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
     BottomNavigationView bottomNavigationView;
@@ -27,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        SupportMapFragment mpaFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mpaFragment.getMapAsync(this);
+
         pagerMain = findViewById(R.id.pagerMain);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
@@ -70,5 +81,14 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+    @Override
+    public void onMapReady(@NonNull GoogleMap googleMap) {
+        myMap = googleMap;
+
+        LatLng sydney = new LatLng(-34, 151);
+        myMap.addMarker(new MarkerOptions().position(sydney).title("Sydney"));
+        myMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 }
