@@ -1,4 +1,4 @@
-package com.example.elso_teszt.adpater;
+package com.example.elso_teszt.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

@@ -3,8 +3,6 @@ package com.example.elso_teszt.bottomnav;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.annotation.SuppressLint;
@@ -12,8 +10,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.elso_teszt.R;
-import com.example.elso_teszt.adpater.AdapterViewPager;
-import com.example.elso_teszt.databinding.ActivityMainBinding;
+import com.example.elso_teszt.adapter.AdapterViewPager;
 import com.example.elso_teszt.fragment.MapFragment;
 import com.example.elso_teszt.fragment.MenuFragment;
 import com.example.elso_teszt.fragment.UserFragment;
