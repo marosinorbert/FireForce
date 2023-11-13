@@ -25,7 +25,7 @@ import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements OnMapReadyCallback{
+public class MainActivity extends AppCompatActivity{
     private GoogleMap myMap;
     ViewPager2 pagerMain;
     ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
@@ -35,14 +35,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        SupportMapFragment mpaFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        mpaFragment.getMapAsync(this);
-
         pagerMain = findViewById(R.id.pagerMain);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
-        fragmentArrayList.add(new MenuFragment());
         fragmentArrayList.add(new MapFragment());
+        fragmentArrayList.add(new MenuFragment());
         fragmentArrayList.add(new UserFragment());
 
         AdapterViewPager adapterViewPager = new AdapterViewPager(this, fragmentArrayList);
@@ -81,14 +78,5 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 return true;
             }
         });
-    }
-
-    @Override
-    public void onMapReady(@NonNull GoogleMap googleMap) {
-        myMap = googleMap;
-
-        LatLng sydney = new LatLng(-34, 151);
-        myMap.addMarker(new MarkerOptions().position(sydney).title("Sydney"));
-        myMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 }
