@@ -5,13 +5,12 @@
         android:id="@+id/map"
         android:icon="@drawable/baseline_map_24"
         app:showAsAction="ifRoom"
-        android:title="Map"
-        />
+        android:title="Map" />
     <item
         android:id="@+id/menu"
         android:icon="@drawable/baseline_local_fire_department_24"
         app:showAsAction="ifRoom"
-        android:title="Menu"/>
+        android:title="Home"/>
     <item
         android:id="@+id/user"
         android:icon="@drawable/baseline_person_24"
