@@ -8,7 +8,6 @@
     android:background="@drawable/gradient"
     tools:context=".fragment.MenuFragment">
 
-    <!-- Bejelentkezés szövegmező -->
     <TextView
         android:id="@+id/bejelentkezes"
         android:layout_width="match_parent"
@@ -23,9 +22,9 @@
         android:text="Bejelentkezés"
         android:textColor="@color/white"
         android:textSize="40dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        />
 
-    <!-- E-mail szövegmező -->
     <EditText
         android:id="@+id/email"
         android:layout_width="match_parent"
@@ -35,12 +34,12 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:layout_margin="10dp"
-        android:background="@drawable/rounded_corner_textfield"
+        android:background="#30ffffff"
         android:padding="20dp"
         android:drawableLeft="@drawable/baseline_person_outline_24"
-        android:drawablePadding="7dp" />
+        android:drawablePadding="7dp"
+        />
 
-    <!-- Jelszó szövegmező -->
     <EditText
         android:id="@+id/jelszo"
         android:layout_width="match_parent"
@@ -50,12 +49,12 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:layout_margin="10dp"
-        android:background="@drawable/rounded_corner_textfield"
+        android:background="#30ffffff"
         android:padding="20dp"
         android:drawableLeft="@drawable/baseline_key_24"
-        android:drawablePadding="7dp" />
+        android:drawablePadding="7dp"
+        />
 
-    <!-- Bejelentkezés gomb -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/bejelentkezes_gomb"
         android:layout_width="wrap_content"
@@ -64,7 +63,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/rounded_corner_button"
+        android:background="#0000FF"
         android:text="Bejelentkezés"
         android:textSize="25dp" />
 </RelativeLayout>
+
