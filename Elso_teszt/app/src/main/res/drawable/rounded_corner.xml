@@ -1,0 +1,4 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#30ffffff" /> <!-- Háttérszín -->
+    <corners android:radius="100dp" /> <!-- Kerekítés mértéke -->
+</shape>
