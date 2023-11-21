@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,20 +8,62 @@
     android:background="@drawable/gradient"
     tools:context=".fragment.MenuFragment">
 
-    <!--<ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        app:srcCompat="@drawable/baseline_local_fire_department_24" />
-
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/bejelentkezes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:text="Bejelentkezés"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/felhasznalonev"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bejelentkezes"
+        android:hint="Felhasználónév"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:layout_margin="10dp"
+        android:background="#30ffffff"
+        android:padding="20dp"
+        android:drawableLeft="@drawable/baseline_person_outline_24"
+        android:drawablePadding="7dp"
+        />
+
+    <EditText
+        android:id="@+id/jelszo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/felhasznalonev"
+        android:hint="Jelszó"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:layout_margin="10dp"
+        android:background="#30ffffff"
+        android:padding="20dp"
+        android:drawableLeft="@drawable/baseline_key_24"
+        android:drawablePadding="7dp"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bejelentkezes_gomb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
-        android:layout_gravity="center_horizontal"
-        android:textSize="40dp"
-        android:textColor="@color/white"
-        android:text="Bejelentkezés" />-->
-</FrameLayout>
+        android:layout_below="@+id/jelszo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/material_on_background_disabled"
+        android:text="Bejelentkezés"
+        android:textSize="25dp" />
+</RelativeLayout>
 
