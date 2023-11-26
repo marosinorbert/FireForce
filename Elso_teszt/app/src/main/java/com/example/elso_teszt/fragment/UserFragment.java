@@ -1,12 +1,15 @@
 package com.example.elso_teszt.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.elso_teszt.R;
 
@@ -58,9 +61,18 @@ public class UserFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this
-        return inflater.inflate(R.layout.fragment_user, container, false);
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        Button regisztracioGomb = view.findViewById(R.id.regisztracio_gomb);
+
+        regisztracioGomb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), EgyesuletekActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
 }
