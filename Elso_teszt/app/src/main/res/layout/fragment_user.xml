@@ -87,14 +87,68 @@
 
     <!-- Regisztráció gomb -->
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/bejelentkezes_gomb"
+        android:id="@+id/regisztracio_gomb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/jelszo2"
+        android:layout_below="@+id/adatvedelem"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/rounded_corner"
         android:text="Regisztráció"
         android:textSize="25dp" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/engedely"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/jelszo2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginStart="10dp"
+        android:text="Elfogadom az engedélynyilatkozatot  "
+        android:textSize="17dp"
+        app:thumbTint="#008000"
+        app:trackTint="@color/white"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/aszf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/engedely"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="Általános szerződési feltételek  "
+        android:textSize="17dp"
+        app:thumbTint="#008000"
+        app:trackTint="@color/white"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/adatvedelem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aszf"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="Adatvédelemi nyilatkozat  "
+        android:textSize="17dp"
+        app:thumbTint="#008000"
+        app:trackTint="@color/white"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        />
+
 </RelativeLayout>
