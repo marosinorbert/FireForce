@@ -8,6 +8,7 @@
     android:background="@drawable/gradient"
     tools:context=".fragment.MenuFragment">
 
+    <!-- Bejelentkezés szövegmező -->
     <TextView
         android:id="@+id/bejelentkezes"
         android:layout_width="match_parent"
@@ -22,9 +23,9 @@
         android:text="Bejelentkezés"
         android:textColor="@color/white"
         android:textSize="40dp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
 
+    <!-- E-mail szövegmező -->
     <EditText
         android:id="@+id/email"
         android:layout_width="match_parent"
@@ -34,12 +35,17 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:layout_margin="10dp"
-        android:background="#30ffffff"
+        android:background="@drawable/rounded_corner_textfield"
         android:padding="20dp"
         android:drawableLeft="@drawable/baseline_person_outline_24"
         android:drawablePadding="7dp"
-        />
+        android:inputType="textEmailAddress"
+        android:imeOptions="actionNext"
+        android:imeActionId="@+id/ime_next"
+        android:imeActionLabel="Next"
+        tools:ignore="InvalidImeActionId" />
 
+    <!-- Jelszó szövegmező -->
     <EditText
         android:id="@+id/jelszo"
         android:layout_width="match_parent"
@@ -49,12 +55,17 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:layout_margin="10dp"
-        android:background="#30ffffff"
+        android:background="@drawable/rounded_corner_textfield"
         android:padding="20dp"
         android:drawableLeft="@drawable/baseline_key_24"
         android:drawablePadding="7dp"
-        />
+        android:inputType="textPassword"
+        android:imeOptions="actionDone"
+        android:imeActionId="@+id/ime_done"
+        android:imeActionLabel="Done"
+        tools:ignore="InvalidImeActionId" />
 
+    <!-- Bejelentkezés gomb -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/bejelentkezes_gomb"
         android:layout_width="wrap_content"
@@ -63,8 +74,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="20dp"
-        android:background="#0000FF"
+        android:background="@drawable/rounded_corner_button"
         android:text="Bejelentkezés"
-        android:textSize="25dp" />
+        android:textSize="25dp"
+        />
 </RelativeLayout>
-
