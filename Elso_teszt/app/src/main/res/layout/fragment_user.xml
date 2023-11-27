@@ -1,154 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/frame_layout"
-    android:background="@drawable/gradient"
-    tools:context=".fragment.MenuFragment">
-
-    <!-- Regisztráció szövegmező -->
-    <TextView
-        android:id="@+id/regisztracio"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="100dp"
-        android:layout_marginBottom="18dp"
-        android:gravity="center"
-        android:text="Regisztráció"
-        android:textColor="@color/white"
-        android:textSize="40dp"
-        android:textStyle="bold" />
+        android:minHeight="870dp"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/frame_layout"
+        android:background="@drawable/gradient"
+        tools:context=".fragment.MenuFragment">
 
-    <!-- E-mail szövegmező -->
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/regisztracio"
-        android:hint="E-mail"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:layout_margin="5dp"
-        android:background="@drawable/rounded_corner_textfield"
-        android:padding="20dp"
-        android:drawableLeft="@drawable/baseline_person_outline_24"
-        android:drawablePadding="7dp"
-        android:inputType="textEmailAddress"
-        android:imeOptions="actionNext"
-        android:imeActionId="@+id/ime_next"
-        android:imeActionLabel="Next"
-        tools:ignore="InvalidImeActionId" />
+        <!-- Regisztráció szövegmező -->
+        <TextView
+            android:id="@+id/regisztracio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginBottom="50dp"
+            android:gravity="center"
+            android:text="Regisztráció"
+            android:textColor="@color/white"
+            android:textSize="40dp"
+            android:textStyle="bold" />
 
-    <!-- Jelszó szövegmező -->
-    <EditText
-        android:id="@+id/jelszo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/email"
-        android:hint="Jelszó"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:layout_margin="5dp"
-        android:background="@drawable/rounded_corner_textfield"
-        android:padding="20dp"
-        android:drawableLeft="@drawable/baseline_key_24"
-        android:drawablePadding="7dp"
-        android:inputType="textPassword"
-        android:imeOptions="actionNext"
-        android:imeActionId="@+id/ime_next"
-        android:imeActionLabel="Next"
-        tools:ignore="InvalidImeActionId" />
+        <!-- E-mail szövegmező -->
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/regisztracio"
+            android:hint="E-mail"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_corner_textfield"
+            android:padding="20dp"
+            android:drawableLeft="@drawable/baseline_person_outline_24"
+            android:drawablePadding="7dp"
+            android:inputType="textEmailAddress"
+            android:imeOptions="actionNext"
+            android:imeActionId="@+id/ime_next"
+            android:imeActionLabel="Next"
+            tools:ignore="InvalidImeActionId" />
 
-    <!-- Jelszó újra szövegmező -->
-    <EditText
-        android:id="@+id/jelszo2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/jelszo"
-        android:hint="Jelszó újra"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:layout_margin="5dp"
-        android:background="@drawable/rounded_corner_textfield"
-        android:padding="20dp"
-        android:drawableLeft="@drawable/baseline_key_24"
-        android:drawablePadding="7dp"
-        android:inputType="textPassword"
-        android:imeOptions="actionDone"
-        android:imeActionId="@+id/ime_done"
-        android:imeActionLabel="Done"
-        tools:ignore="InvalidImeActionId" />
+        <!-- Jelszó szövegmező -->
+        <EditText
+            android:id="@+id/jelszo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/email"
+            android:hint="Jelszó"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_corner_textfield"
+            android:padding="20dp"
+            android:drawableLeft="@drawable/baseline_key_24"
+            android:drawablePadding="7dp"
+            android:inputType="textPassword"
+            android:imeOptions="actionNext"
+            android:imeActionId="@+id/ime_next"
+            android:imeActionLabel="Next"
+            tools:ignore="InvalidImeActionId" />
 
-    <!-- Regisztráció gomb -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/regisztracio_gomb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/adatvedelem"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/rounded_corner_button"
-        android:text="Regisztráció"
-        android:textSize="25dp" />
+        <!-- Jelszó újra szövegmező -->
+        <EditText
+            android:id="@+id/jelszo2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/jelszo"
+            android:hint="Jelszó újra"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_corner_textfield"
+            android:padding="20dp"
+            android:drawableLeft="@drawable/baseline_key_24"
+            android:drawablePadding="7dp"
+            android:inputType="textPassword"
+            android:imeOptions="actionDone"
+            android:imeActionId="@+id/ime_done"
+            android:imeActionLabel="Done"
+            tools:ignore="InvalidImeActionId" />
 
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/engedely"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/jelszo2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="0dp"
-        android:layout_marginStart="10dp"
-        android:text="Elfogadom az engedélynyilatkozatot  "
-        android:textSize="20dp"
-        app:thumbTint="#008000"
-        app:trackTint="@color/white"
-        android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        />
+        <!-- Regisztráció gomb -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/regisztracio_gomb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/adatvedelem"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/rounded_corner_button"
+            android:text="Regisztráció"
+            android:textSize="25dp" />
 
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/aszf"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/engedely"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="0dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:text="Általános szerződési feltételek  "
-        android:textSize="20dp"
-        app:thumbTint="#008000"
-        app:trackTint="@color/white"
-        android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        />
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/engedely"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/jelszo2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginStart="10dp"
+            android:text="Elfogadom az engedélynyilatkozatot  "
+            android:textSize="25dp"
+            app:thumbTint="#008000"
+            app:trackTint="@color/white"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            />
 
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/adatvedelem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/aszf"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="0dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:text="Adatvédelemi nyilatkozat  "
-        android:textSize="20dp"
-        app:thumbTint="#008000"
-        app:trackTint="@color/white"
-        android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        />
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/aszf"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/engedely"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="Általános szerződési feltételek  "
+            android:textSize="25dp"
+            app:thumbTint="#008000"
+            app:trackTint="@color/white"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            />
 
-</RelativeLayout>
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/adatvedelem"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/aszf"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="Adatvédelemi nyilatkozat  "
+            android:textSize="25dp"
+            app:thumbTint="#008000"
+            app:trackTint="@color/white"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            />
+    </RelativeLayout>
+</ScrollView>
