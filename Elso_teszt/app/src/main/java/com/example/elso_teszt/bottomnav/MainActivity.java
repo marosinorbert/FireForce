@@ -3,12 +3,12 @@ package com.example.elso_teszt.bottomnav;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
-
 import com.example.elso_teszt.R;
 import com.example.elso_teszt.adapter.AdapterViewPager;
 import com.example.elso_teszt.fragment.MapFragment;
@@ -25,8 +25,8 @@ import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity{
-    private GoogleMap myMap;
+public class MainActivity extends FragmentActivity implements OnMapReadyCallback{
+    private GoogleMap mMap;
     ViewPager2 pagerMain;
     ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
     BottomNavigationView bottomNavigationView;
@@ -34,6 +34,11 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        if (mapFragment != null) {
+            mapFragment.getMapAsync(this);
+        }
 
         pagerMain = findViewById(R.id.pagerMain);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
@@ -78,5 +83,15 @@ public class MainActivity extends AppCompatActivity{
                 return true;
             }
         });
+    }
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+
+        LatLng location = new LatLng(46.061906, 25.336797);
+        mMap.addMarker(new MarkerOptions().position(location));
+
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
+
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
     }
 }
