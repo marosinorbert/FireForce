@@ -61,8 +61,9 @@ public class UserFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_user, container, false);
 
         Button regisztracioGomb = view.findViewById(R.id.regisztracio_gomb);
 
@@ -73,6 +74,11 @@ public class UserFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        return view;
     }
 
 }
+
+
+

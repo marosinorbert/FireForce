@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+
 import com.example.elso_teszt.R;
 
 public class MenuFragment extends Fragment {
@@ -33,15 +34,9 @@ public class MenuFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_menu, container, false);
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+        View view = inflater.inflate(R.layout.fragment_menu, container, false);
 
         Button bejelentkezesGomb = view.findViewById(R.id.bejelentkezes_gomb);
 
@@ -52,6 +47,7 @@ public class MenuFragment extends Fragment {
                 startActivity(intent);
             }
         });
+  return view;
     }
-}
 
+}

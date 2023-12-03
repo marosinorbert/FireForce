@@ -1,13 +1,10 @@
 package com.example.elso_teszt.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.elso_teszt.R;
 
+// EgyesuletekActivity
 public class EgyesuletekActivity extends AppCompatActivity {
 
     @Override
@@ -15,13 +12,16 @@ public class EgyesuletekActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.egyesuletek);
 
-        Button bejelentkezesGomb = findViewById(R.id.bejelentkezes_gomb);
-        bejelentkezesGomb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(EgyesuletekActivity.this, MenuFragment.class);
-                startActivity(intent);
-            }
-        });
+        // Példányosítsd a Fragmenteket
+        MenuFragment menuFragment = new MenuFragment();
+        UserFragment userFragment = new UserFragment();
+
+        // Add hozzá a Fragmenteket az Activity-hez
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.fragment_container, menuFragment, "menu_fragment_tag")
+                .add(R.id.fragment_container, userFragment, "user_fragment_tag")
+                .commit();
     }
 }
+
