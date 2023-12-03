@@ -2,6 +2,8 @@ package com.example.elso_teszt.bottomnav;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -25,11 +27,12 @@ import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
     private GoogleMap myMap;
     ViewPager2 pagerMain;
     ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
     BottomNavigationView bottomNavigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,12 +46,20 @@ public class MainActivity extends AppCompatActivity{
         fragmentArrayList.add(new UserFragment());
 
         AdapterViewPager adapterViewPager = new AdapterViewPager(this, fragmentArrayList);
-
         pagerMain.setAdapter(adapterViewPager);
+
         pagerMain.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
-                switch (position){
+                super.onPageSelected(position);
+
+                if (position == 0) {
+                    pagerMain.setUserInputEnabled(false);
+                } else {
+                    pagerMain.setUserInputEnabled(true);
+                }
+
+                switch (position) {
                     case 0:
                         bottomNavigationView.setSelectedItemId(R.id.map);
                         break;
@@ -59,9 +70,9 @@ public class MainActivity extends AppCompatActivity{
                         bottomNavigationView.setSelectedItemId(R.id.user);
                         break;
                 }
-                super.onPageSelected(position);
             }
         });
+
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @SuppressLint("NonConstantResourceId")
             @Override
