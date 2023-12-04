@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.CompoundButton;
 
 import androidx.appcompat.widget.SwitchCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.elso_teszt.R;
@@ -70,11 +71,13 @@ public class UserFragment extends Fragment {
         SwitchCompat aszfSwitch = view.findViewById(R.id.aszf);
         SwitchCompat adatvedelemSwitch = view.findViewById(R.id.adatvedelem);
 
+        // Csúszkák hátterének színének beállítása
+        int csuszkaHatterSzine = ContextCompat.getColor(requireContext(), R.color.zold);
         engedelySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    engedelySwitch.setThumbTintList(ColorStateList.valueOf(Color.GREEN));
+                    engedelySwitch.setThumbTintList(ColorStateList.valueOf(csuszkaHatterSzine));
                 } else {
                     engedelySwitch.setThumbTintList(ColorStateList.valueOf(Color.WHITE));
                 }
@@ -85,7 +88,7 @@ public class UserFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    aszfSwitch.setThumbTintList(ColorStateList.valueOf(Color.GREEN));
+                    aszfSwitch.setThumbTintList(ColorStateList.valueOf(csuszkaHatterSzine));
                 } else {
                     aszfSwitch.setThumbTintList(ColorStateList.valueOf(Color.WHITE));
                 }
@@ -96,7 +99,7 @@ public class UserFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    adatvedelemSwitch.setThumbTintList(ColorStateList.valueOf(Color.GREEN));
+                    adatvedelemSwitch.setThumbTintList(ColorStateList.valueOf(csuszkaHatterSzine));
                 } else {
                     adatvedelemSwitch.setThumbTintList(ColorStateList.valueOf(Color.WHITE));
                 }
