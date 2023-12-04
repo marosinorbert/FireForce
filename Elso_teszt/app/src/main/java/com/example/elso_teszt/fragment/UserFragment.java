@@ -1,14 +1,18 @@
 package com.example.elso_teszt.fragment;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
+
+import androidx.appcompat.widget.SwitchCompat;
+import androidx.fragment.app.Fragment;
 
 import com.example.elso_teszt.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -60,7 +64,49 @@ public class UserFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this
-        return inflater.inflate(R.layout.fragment_user, container, false);
+        View view = inflater.inflate(R.layout.fragment_user, container, false);
+
+        SwitchCompat engedelySwitch = view.findViewById(R.id.engedely);
+        SwitchCompat aszfSwitch = view.findViewById(R.id.aszf);
+        SwitchCompat adatvedelemSwitch = view.findViewById(R.id.adatvedelem);
+
+        engedelySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    engedelySwitch.setThumbTintList(ColorStateList.valueOf(Color.GREEN));
+                } else {
+                    engedelySwitch.setThumbTintList(ColorStateList.valueOf(Color.WHITE));
+                }
+            }
+        });
+
+        aszfSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    aszfSwitch.setThumbTintList(ColorStateList.valueOf(Color.GREEN));
+                } else {
+                    aszfSwitch.setThumbTintList(ColorStateList.valueOf(Color.WHITE));
+                }
+            }
+        });
+
+        adatvedelemSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    adatvedelemSwitch.setThumbTintList(ColorStateList.valueOf(Color.GREEN));
+                } else {
+                    adatvedelemSwitch.setThumbTintList(ColorStateList.valueOf(Color.WHITE));
+                }
+            }
+        });
+
+        return view;
     }
+
+
+
+
 }

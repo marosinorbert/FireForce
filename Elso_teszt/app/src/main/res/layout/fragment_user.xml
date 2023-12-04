@@ -109,11 +109,10 @@
             android:layout_marginStart="10dp"
             android:text="Elfogadom az engedélynyilatkozatot  "
             android:textSize="18dp"
-            app:thumbTint="#008000"
+            app:thumbTint="@color/white"
             app:trackTint="@color/white"
             android:textStyle="bold"
-            android:textColor="#FFFFFF"
-            />
+            android:textColor="#FFFFFF" />
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/aszf"
@@ -127,11 +126,10 @@
             android:layout_marginLeft="10dp"
             android:text="Általános szerződési feltételek  "
             android:textSize="18dp"
-            app:thumbTint="#008000"
+            app:thumbTint="@color/white"
             app:trackTint="@color/white"
             android:textStyle="bold"
-            android:textColor="#FFFFFF"
-            />
+            android:textColor="#FFFFFF" />
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/adatvedelem"
@@ -145,9 +143,9 @@
             android:layout_marginLeft="10dp"
             android:text="Adatvédelemi nyilatkozat  "
             android:textSize="18dp"
-            app:thumbTint="#008000"
+            app:thumbTint="@color/white"
             app:trackTint="@color/white"
             android:textStyle="bold"
-            android:textColor="#FFFFFF"
-            />
+            android:textColor="#FFFFFF" />
+
 </RelativeLayout>
