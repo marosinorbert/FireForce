@@ -7,24 +7,39 @@
     android:background="@drawable/gradient"
     >
 
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/baseline_local_fire_department_24"
+        android:layout_centerHorizontal="true" />
+
     <Button
-        android:id="@+id/btn_join_club"
+        android:id="@+id/csatlakozas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Csatlakozás egyesülethez"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/rounded_corner_button"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
         android:drawableLeft="@drawable/baseline_people_alt_24"
-        />
+    />
 
     <Button
-        android:id="@+id/btn_create_club"
+        android:id="@+id/letrehozas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Egyesület létrehozása"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_below="@+id/csatlakozas"
+        android:background="@drawable/rounded_corner_button"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
         android:drawableLeft="@drawable/baseline_add_24"
-        />
+    />
 
 </RelativeLayout>
