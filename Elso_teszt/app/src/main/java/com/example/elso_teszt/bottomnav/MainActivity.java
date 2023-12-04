@@ -1,27 +1,18 @@
 package com.example.elso_teszt.bottomnav;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SwitchCompat;
-import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
-import androidx.viewpager2.widget.ViewPager2;
-
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager2.widget.ViewPager2;
+
 import com.example.elso_teszt.R;
 import com.example.elso_teszt.adapter.AdapterViewPager;
-import com.example.elso_teszt.fragment.MapFragment;
-import com.example.elso_teszt.fragment.MenuFragment;
-import com.example.elso_teszt.fragment.UserFragment;
-import com.google.android.gms.maps.CameraUpdateFactory;
+import com.example.elso_teszt.fragment.*;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
