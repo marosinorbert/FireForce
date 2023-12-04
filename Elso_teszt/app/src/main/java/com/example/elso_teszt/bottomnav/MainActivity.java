@@ -1,14 +1,14 @@
 package com.example.elso_teszt.bottomnav;
 
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.annotation.SuppressLint;
-import android.os.Bundle;
-import android.view.MenuItem;
 import com.example.elso_teszt.R;
 import com.example.elso_teszt.adapter.AdapterViewPager;
 import com.example.elso_teszt.fragment.MapFragment;
@@ -50,6 +50,8 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         AdapterViewPager adapterViewPager = new AdapterViewPager(this, fragmentArrayList);
 
         pagerMain.setAdapter(adapterViewPager);
+        pagerMain.setCurrentItem(1, false);
+        bottomNavigationView.setSelectedItemId(R.id.menu);
         pagerMain.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
