@@ -18,12 +18,15 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link MenuFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MenuFragment extends Fragment {
+
+
+public class MenuFragment extends  Fragment {
 
     private FirebaseAuth mAuth; // Firebase Auth objektum
 
@@ -92,13 +95,20 @@ public class MenuFragment extends Fragment {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
+                                    // Sikeres bejelentkezés
+                                    Toast.makeText(requireContext(), "Sikeres bejelentkezés", Toast.LENGTH_SHORT).show();
+
+                                    // Elindítjuk a StartFragment-et MenuFragment esetén
                                     Fragment startFragment = new StartFragment();
                                     FragmentTransaction transaction = requireActivity().getSupportFragmentManager().beginTransaction();
-                                    transaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out);
                                     transaction.replace(R.id.fragment_menu, startFragment);
-                                    transaction.addToBackStack(null);
                                     transaction.commit();
-                                    Toast.makeText(requireContext(), "Sikeres bejelentkezés", Toast.LENGTH_SHORT).show();
+
+                                    //ITT GOND VAN
+                                    MyProfileFragment myProfileFragment = new MyProfileFragment();
+                                    FragmentTransaction transaction2 = requireActivity().getSupportFragmentManager().beginTransaction();
+                                    transaction2.replace(R.id.fragment_user, myProfileFragment); // Itt most már helyes `userTransaction`-t használod.
+                                    transaction2.commit();
 
                                 } else {
                                     // Sikertelen bejelentkezés
@@ -112,12 +122,6 @@ public class MenuFragment extends Fragment {
         return view;
     }
 
-    private boolean isCredentialsValid(String email, String password) {
-        String validEmail = "admin";
-        String validPassword = "admin";
-        return email.equals(validEmail) && password.equals(validPassword);
-
-    }
 
     private void loginUser(String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password)
