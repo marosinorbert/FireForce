@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/fragment_start"
     tools:context=".fragment.StartFragment"
     android:background="@drawable/gradient"
     >
@@ -17,12 +18,12 @@
 
     <Button
         android:id="@+id/csatlakozas"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:text="Csatlakozás egyesülethez"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="350dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="15dp"
         android:background="@drawable/rounded_corner_button"
         android:textColor="#FFFFFF"
         android:textSize="20dp"
@@ -31,7 +32,7 @@
 
     <Button
         android:id="@+id/letrehozas"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:text="Egyesület létrehozása"
         android:layout_centerHorizontal="true"

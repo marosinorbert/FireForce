@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/frame_layout"
+    android:id="@+id/fragment_menu"
     android:background="@drawable/gradient"
     tools:context=".fragment.MenuFragment">
 
@@ -31,18 +31,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/bejelentkezes"
-        android:hint="E-mail"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/rounded_corner_textfield"
-        android:padding="20dp"
         android:drawableLeft="@drawable/baseline_person_outline_24"
         android:drawablePadding="7dp"
-        android:inputType="textEmailAddress"
-        android:imeOptions="actionNext"
+        android:hint="E-mail"
         android:imeActionId="@+id/ime_next"
         android:imeActionLabel="Next"
+        android:imeOptions="actionNext"
+        android:inputType="textEmailAddress"
+        android:padding="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         tools:ignore="InvalidImeActionId" />
 
     <!-- Jelszó szövegmező -->

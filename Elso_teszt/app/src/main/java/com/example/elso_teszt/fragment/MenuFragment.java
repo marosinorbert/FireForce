@@ -3,10 +3,14 @@ package com.example.elso_teszt.fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.elso_teszt.R;
 
@@ -60,7 +64,39 @@ public class MenuFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_menu, container, false);
+        View view = inflater.inflate(R.layout.fragment_menu, container, false);
+
+        EditText emailEditText = view.findViewById(R.id.email);
+        EditText passwordEditText = view.findViewById(R.id.jelszo);
+        Button loginButton = view.findViewById(R.id.bejelentkezes_gomb);
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = emailEditText.getText().toString().trim();
+                String password = passwordEditText.getText().toString().trim();
+
+                if (isCredentialsValid(email, password)) {
+                    Fragment startFragment = new StartFragment();
+                    FragmentTransaction transaction = requireActivity().getSupportFragmentManager().beginTransaction();
+                    transaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out);
+                    transaction.replace(R.id.fragment_menu, startFragment);
+                    transaction.addToBackStack(null);
+                    transaction.commit();
+                } else {
+                    Toast.makeText(requireContext(), "Hibás e-mail vagy jelszó!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        return view;
     }
+
+    private boolean isCredentialsValid(String email, String password) {
+        String validEmail = "admin";
+        String validPassword = "admin";
+        return email.equals(validEmail) && password.equals(validPassword);
+
+    }
+
 }
