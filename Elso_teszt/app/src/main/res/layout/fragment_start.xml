@@ -27,7 +27,7 @@
         android:textColor="#FFFFFF"
         android:textSize="20dp"
         android:drawableLeft="@drawable/baseline_people_alt_24"
-    />
+        />
 
     <Button
         android:id="@+id/letrehozas"
@@ -40,6 +40,6 @@
         android:textColor="#FFFFFF"
         android:textSize="20dp"
         android:drawableLeft="@drawable/baseline_add_24"
-    />
+        />
 
 </RelativeLayout>
