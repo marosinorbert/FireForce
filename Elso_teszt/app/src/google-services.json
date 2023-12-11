@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1094277280345",
+    "project_id": "fireforce-72922",
+    "storage_bucket": "fireforce-72922.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1094277280345:android:f985666e115ad267b2b748",
+        "android_client_info": {
+          "package_name": "com.example.elso_teszt"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8sq5teDOPHgaoES771KlIrRwDrNq8h3Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,10 +1,6 @@
 package com.example.elso_teszt.fragment;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +8,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.example.elso_teszt.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,6 +24,8 @@ import com.example.elso_teszt.R;
  * create an instance of this fragment.
  */
 public class MenuFragment extends Fragment {
+
+    private FirebaseAuth mAuth; // Firebase Auth objektum
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -66,6 +72,9 @@ public class MenuFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_menu, container, false);
 
+        // Firebase Auth inicializálása
+        mAuth = FirebaseAuth.getInstance();
+
         EditText emailEditText = view.findViewById(R.id.email);
         EditText passwordEditText = view.findViewById(R.id.jelszo);
         Button loginButton = view.findViewById(R.id.bejelentkezes_gomb);
@@ -76,16 +85,27 @@ public class MenuFragment extends Fragment {
                 String email = emailEditText.getText().toString().trim();
                 String password = passwordEditText.getText().toString().trim();
 
-                if (isCredentialsValid(email, password)) {
-                    Fragment startFragment = new StartFragment();
-                    FragmentTransaction transaction = requireActivity().getSupportFragmentManager().beginTransaction();
-                    transaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out);
-                    transaction.replace(R.id.fragment_menu, startFragment);
-                    transaction.addToBackStack(null);
-                    transaction.commit();
-                } else {
-                    Toast.makeText(requireContext(), "Hibás e-mail vagy jelszó!", Toast.LENGTH_SHORT).show();
-                }
+                loginUser(email, password);
+
+                mAuth.signInWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(requireActivity(), new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    Fragment startFragment = new StartFragment();
+                                    FragmentTransaction transaction = requireActivity().getSupportFragmentManager().beginTransaction();
+                                    transaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out);
+                                    transaction.replace(R.id.fragment_menu, startFragment);
+                                    transaction.addToBackStack(null);
+                                    transaction.commit();
+                                    Toast.makeText(requireContext(), "Sikeres bejelentkezés", Toast.LENGTH_SHORT).show();
+
+                                } else {
+                                    // Sikertelen bejelentkezés
+                                    Toast.makeText(requireContext(), "Sikertelen bejelentkezés: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
             }
         });
 
@@ -98,5 +118,24 @@ public class MenuFragment extends Fragment {
         return email.equals(validEmail) && password.equals(validPassword);
 
     }
+
+    private void loginUser(String email, String password) {
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(requireActivity(), new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sikeres bejelentkezés
+                            Toast.makeText(requireContext(), "Sikeres bejelentkezés", Toast.LENGTH_SHORT).show();
+
+                            // Ide adhatsz hozzá kódot, amit a sikeres bejelentkezés esetén szeretnél végrehajtani
+                        } else {
+                            // Sikertelen bejelentkezés
+                            Toast.makeText(requireContext(), "Sikertelen bejelentkezés: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
+
 
 }
