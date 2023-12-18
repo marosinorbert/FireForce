@@ -104,11 +104,7 @@ public class MenuFragment extends  Fragment {
                                     transaction.replace(R.id.fragment_menu, startFragment);
                                     transaction.commit();
 
-                                    //ITT GOND VAN
-                                    MyProfileFragment myProfileFragment = new MyProfileFragment();
-                                    FragmentTransaction transaction2 = requireActivity().getSupportFragmentManager().beginTransaction();
-                                    transaction2.replace(R.id.fragment_user, myProfileFragment); // Itt most már helyes `userTransaction`-t használod.
-                                    transaction2.commit();
+                                    //átkellene állítani a regisztracios oldalt is
 
                                 } else {
                                     // Sikertelen bejelentkezés
